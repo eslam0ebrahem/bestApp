@@ -8,6 +8,8 @@ require('dotenv').config();
 
 const middlewares = require('./middlewares');
 const api = require('./api');
+const homeRoute = require('./routes/homeRoute');
+const productRoute = require('./routes/productRoute');
 
 const app = express();
 // view engine setup
@@ -20,13 +22,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
-  // res.json({
-  //   message: '🦄🌈✨👋🌎🌍🌏✨🌈🦄',
-  // });
-  res.render('index', { title: 'Express' });
-});
-
+app.use('/', homeRoute);
+app.use('/product', productRoute);
 app.use('/api/v1', api);
 
 app.use(middlewares.notFound);

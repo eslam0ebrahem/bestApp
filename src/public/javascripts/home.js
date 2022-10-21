@@ -9,13 +9,7 @@ var product = document.getElementsByClassName("Hproduct")[0]
 handleUI()
 
 function handleUI() {
-    var slideshow = document.getElementsByClassName("slideshow")[0].outerHTML
-
-    document.getElementById("products").innerHTML += slideshow.repeat(3)
-    var slidersheader = document.getElementsByClassName("sliderHeader")
-    slidersheader[1].innerHTML = "الأكثر مبيعاً"
-    slidersheader[2].innerHTML = "وصل حديثاً"
-
+    
     setHolderWidth()
     window.addEventListener('resize', (a) => {
         setHolderWidth()
@@ -89,7 +83,6 @@ function cardsInRow() {
     return Math.floor(pagewidth.clientWidth * .8 / card_size)
 }
 function iteratorClick(iterator, direction) {
-
     var slidesMover = document.getElementsByClassName("slideMover")
     var index = 0
     for (let i = 0; i < slidesMover.length; i++) {
@@ -102,7 +95,7 @@ function iteratorClick(iterator, direction) {
 }
 
 function transform(index, steps) {
-
+    
     var productsHolder = document.getElementsByClassName("slideshow")[index].querySelector(".productsHolder")
 
     var transform_index = mytransform[index]
@@ -114,7 +107,7 @@ function transform(index, steps) {
     if (transform_index + bigger_scroll < 0) transform_index = bigger_scroll * -1
 
     if (transform_index > 0) transform_index = 0
-
+    
     productsHolder.children[0].style.transform = `translate(${transform_index}px,0px)`
 
     mytransform[index] = transform_index
@@ -152,7 +145,7 @@ function refreshPoints(index) {
 
     }
     points.reverse()
-
+    
     document.getElementsByClassName("pointsContainer")[index].innerHTML = points.join("\n")
 }
 function getpointLocation(x, y) {
@@ -163,3 +156,11 @@ for (const iterator of document.getElementsByClassName("product")) {
 
     }
 }
+
+/*
+each i in [1,2,3,4]
+          if i!=2
+            = i
+*/
+
+  
