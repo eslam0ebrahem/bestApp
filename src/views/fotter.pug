@@ -1,0 +1,64 @@
+.center
+  .tabContainer.main_spaceAround.row(style='width:100%;padding:10px')
+    .col-sm-6
+      .center.textshadow.cross_center.center تواصل معنا
+      .center.textshadow.cross_center  
+        a(href="whatsapp://send?abid=+0201015940126") 0201015940126 +
+            img(src='/images/Whitewhatsapp.svg' height='25px' width='25px' style="margin:10px" )
+    .col-sm-6.center
+      .center.textshadow.cross_center.center او عبر وسائل التواصل الاجتماعي
+      .center.myrow.main_spaceBetween(style='width: 200px;height:40px;')
+         .myshdow.center.socialIcon
+           img(src='/images/youtube.svg')
+         .myshdow.center.socialIcon
+           img(src='/images/outline gmail.svg')
+         .myshdow.center.socialIcon
+           img(src='/images/twitter.svg')
+         .myshdow.center.socialIcon
+           img(src='/images/instagram.svg')
+         .myshdow.center.socialIcon
+           img(src='/images/facebook.svg')
+         .myshdow.center.socialIcon
+           img(src='/images/whatsapp.svg')
+      
+div(style='height: 15px;')  
+.myrow(style='margin-bottom: 60px;')
+  .col-1  
+  .col-10.myrow.main_spaceBetween
+    div
+      img(src='/images//logo.png' style='width: 150px;margin-bottom: 25px;')
+      div(style='line-height: 35px;')
+        img(src='/images/call.svg' height='20px' width='20px' style='margin-left: 10px; transform: rotate(270deg);')
+        | مولد النص العربي
+      div(style='line-height: 35px;')
+        img(src='/images/gmail.svg' height='20px' width='20px' style='margin-left: 10px; ')
+        | مولد النص العربي
+      div(style='line-height: 35px;')
+        img(src='/images/location.svg' height='20px' width='20px' style='margin-left: 10px; ')
+        | مولد النص العربي
+    div.mycolumn
+      div(style='font-weight: bold; padding-top: 40px;')  المعلومات
+      a(href="www.google.com" style='padding-top: 10px;') من نحن
+      a(href="www.google.com" style='padding-top: 10px;') الشروط والاحكام
+      a(href="www.google.com" style='padding-top: 10px;') الشركات المصنعة
+      
+      
+    div.windows
+      div.mycolumn(style='font-weight: bold; padding-top: 40px;') التصنيفات
+      each i in data.categories
+        a(href =`category/${i._id}` style='padding-top: 10px;') #{i.nameAr}
+        br
+    div.windows
+      div.mycolumn(style='font-weight: bold; padding-top: 40px;') ماركات السيارات
+      each i in []
+        a(href = i.link style='padding-top: 10px;') #{i.data}
+    div.windows
+      div.mycolumn(style='font-weight: bold; padding-top: 40px;') الشركات المصنعة
+      each i in []
+        a(href = i.link style='padding-top: 10px;') #{i.data}
+      
+  .col-1  
+div.center(style='background-color: rgba(0, 0, 0, .8); height: 50px; color: white;font-size:9pt;')  
+  | جميع الحقوق محفوظة @2022
+div(style='height: 5px;')
+

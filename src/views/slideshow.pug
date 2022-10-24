@@ -3,16 +3,16 @@
 - var d = 0
 
 .container(style="padding : 0; width:470px")
-   each i in imgs
+   each i in arrimg
     .mySlides.border.mycard
         img(src=i style='width:100%; height:300px')
-    a.prev(onclick='plusSlides(-1)') ❮
-    a.next(onclick='plusSlides(1)') ❯
-   .myrow(style="direction:ltr; overflow: hidden;")
+   .myrow.scrolling(style="direction:ltr; overflow: hidden;")
      each i in arrimg
         - d++
-        img.center.demo.cursor.mycard(src = i style='width:150px; height:150px; margin:10px 10px 10px 1px; padding:5px'  onclick=`currentSlide(${d})`)
-    
+        img.center.demo.cursor.mycard(src = i style=`width:150px; height:150px; margin:10px 0px 10px 10px; padding:5px`)
+     a.prev ❮
+     a.next ❯
+   
         
 
      
@@ -21,6 +21,10 @@ style.
   body {
   font-family: Arial;
   margin: 0;
+  }
+  .mycard{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color:white
   }
   * {
   box-sizing: border-box;
@@ -41,7 +45,7 @@ style.
   .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 85%;
   width: auto;
   padding: 16px;
   margin-top: -50px;
@@ -52,7 +56,7 @@ style.
   user-select: none;
   -webkit-user-select: none;
   background-color: rgba(0, 0, 0, 0.8);
-  
+
   }
   /* Position the "next button" to the right */
   .next {

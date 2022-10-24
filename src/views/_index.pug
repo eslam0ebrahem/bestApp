@@ -43,7 +43,7 @@ block content
       
   .background(style='height: 40px; width: 100%; box-shadow: 3px 3px 5px rgb(255 255 255 / 20%), 3px 3px 5px rgb(255 255 255 / 20%);')
   #products
-  each i in [{"header":"العروض","data":data.products}]
+  each i in [{"header":"العروض","data":[{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images/call.svg","link":"https://www.google.com"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"}]},{"header":"الاكثرمبيعاً","data":[{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"}]},{"header":"وصل حديثاً","data":[{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"},{"name":"إسم المنتج","price":"150,00AED","oldprice":"160.00AED","image":"/images//logo.png"}]}]
     .pageColor.slideshow(style='margin-top: 30px; padding: 30px 0px;')
       div(style='display: flex; justify-content: center;')
           div(style='display: flex; justify-content: space-between;width: 75%; ')
@@ -58,7 +58,7 @@ block content
               each data in i.data
                 .Hproduct
                   .card.product.mycolumn.main_spaceBetween.cross_center
-                        img.center.productimg(alt='صوره المنتج' src= data.imgs[0])
+                        img.center.productimg(alt='صوره المنتج' src= data.image)
                         .productName
                         | #{data.name}
                         div(style='text-align: center;')
@@ -68,7 +68,7 @@ block content
                           span.oldprice(style='text-decoration: line-through;')
                               | #{data.oldprice}
                         .row.main_start(style='width: 100%;')
-                          a.mycolumn.main_center.btn.btn-secondary(href=`/product/${data._id}`)
+                          a.mycolumn.main_center.btn.btn-secondary(href=data.link)
                             | &#x627;&#x634;&#x62A;&#x631;&#x64A; &#x627;&#x644;&#x627;&#x646;
       .pointsContainer.myrow.main_center(style='direction: rtl;')
         
@@ -82,7 +82,7 @@ block content
           img.center.productimg2.myshdow(alt='صورة المنتج' src = data.image)
           .productdetails(style='padding: 10px; text-align: center;')
               | #{data.text}
-          a.btn.btn-secondary(style='text-decoration: none;' href=`/product/${data._id}` )
+          a.btn.btn-secondary(style='text-decoration: none;' href = data.link )
               | عرض المنتج
   include fotter.pug
   //- include slids.pug

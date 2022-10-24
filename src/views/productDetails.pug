@@ -6,12 +6,12 @@ block content
   .row.main_spaceBetween(style="margin-top:60px;direction:ltr")
 
     .col-lg-5
-      - var imgs;
       include slideshow.pug
     .col-lg-5(style="direction:rtl;")
       .row
         .col-1
-        div(style="max-width:750px;")
+        div(style="padding:15px")
+         div(style="max-width:750px;")
           h5 #{data.name}
           .lightColor  هذا النص هو نص يمكن ان يستبدل في نفس المساحه، لقد تم توليد هذا النص من مولد النص العربي حيث يمكنك ان تولد مثل هذا النص
           .sp32 
@@ -23,30 +23,32 @@ block content
             input(type="number" value = "1" style="height:30px;margin:0px 10px;width:60px")
             .rect.btn-danger اشتري الان
           .sp32
-          .myrow.main_spaceBetween
+          .myrow.main_center
             .mycolumn
               .rectB.rect(style="background-color:black; color:white;opacity:80%") رقم المنتج
-              .rectB.rect.rectwired
+              .rectB.rect.rectwired MK5744
             .mycolumn
               .rectB.rect(style="background-color:black; color:white;opacity:80%")  التصنيفات
               .rectB.rect.rectwired
+                e تشيب
             .mycolumn
               .rectB.rect(style="background-color:black; color:white;opacity:80%")  الشركه المصنعة
-              .rectB.rect.rectwired
+              .rectB.rect.rectwired 
+                e اكس هورس
           .sp32
           .sp32
           .sp32
           h5 مواصفات المنتج
           .sp32
-          .myrow.main_spaceBetween
+          .myrow.center
             .mycolumn
-              .rectB.rect(style="background-color:black; color:white;opacity:80%") رقم المنتج
+              .rectB.rect(style="background-color:black; color:white;opacity:80%") المصنع
               .rectB.rect.rectwired
             .mycolumn
-              .rectB.rect(style="background-color:black; color:white;opacity:80%")  التصنيفات
+              .rectB.rect(style="background-color:black; color:white;opacity:80%")  الحالة
               .rectB.rect.rectwired
             .mycolumn
-              .rectB.rect(style="background-color:black; color:white;opacity:80%")  الشركه المصنعة
+              .rectB.rect(style="background-color:black; color:white;opacity:80%")  الوزن
               .rectB.rect.rectwired
           .sp32
           .sp16
@@ -82,6 +84,6 @@ block content
     .col-1
   .sp256
   
+  include fotter.pug
   link(rel='stylesheet' href='/stylesheets/productdetails.css')
   script(src='./javascripts/producs.js')
-   

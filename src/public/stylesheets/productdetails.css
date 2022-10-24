@@ -1,6 +1,5 @@
 #right-side {
-    /* width: 100%; */
-    max-width:700px
+    width: 100%;
 
 }
 
@@ -26,9 +25,10 @@
     justify-content: center;
     align-items: center;
 }
+
 .rectB{
     border-radius: 1px;
-    min-width: 130px;
+    width: 100px;
 }
 .rectwired{
     border: 1px solid rgba(0, 0, 0, 0.295);
@@ -47,28 +47,16 @@ h4 {
     margin: 15px 0px;
     box-shadow: rgb(0 0 0) 0px 3px 6px 0px
 }
-.mycard{
-    box-shadow :  rgb(0 0 0 / 48%) 0px 0px 3px 0px;
-    width: 100%;
-    background-color:white
-}
 #descriptionBox{
     background-color: rgba(0, 0, 0, 0.05);
     padding: 15px 0px;
     height: 200px;
     width: 100%;
 }
-.myborder{
-    border:1px solid black;
-        
+.scrolling{
+    scroll-behavior: smooth;
 }
-th , td{
-    width:20%;
-    
-}
-tr{
-    line-height:3
-}
+
 
 
 .sp2{

@@ -1,23 +1,80 @@
-.header
-    .col-1
-    img.col-2.logo(src='/images/logo.png')
-    .col-5(style='height: 40px; display: flex; margin: 20px 0px;')
-      .btn.searchbtn
-        | &#x627;&#x628;&#x62D;&#x62B;
-      input
-    .col-4.phone_num.windows
-      | 41432545321847 +
+.myrow.header
+    .col-1(style="background-color:blue")
+    .col-2
+      img(src='/images/logo.png' style="width: 14vw; ")
+    .col-6(style="background-color:blue height: 40px; display: flex; margin: 20px 0px;")
+       .btn.searchbtn ابحث
+       input
+    a.col-3.phone_num.windows(href="whatsapp://send?abid=+0201015940126") 0201015940126 +
       img(src='/images/whatsapp.svg' height='23px' width='23px' style='margin-right: 10px;')
-    .phone_icon.phone
-      div
-.tabContainer
+    .center(style='width:100%; cursor: pointer;')
+      a.col-3.phone.phone_icon.myshdow(href="whatsapp://send?abid=+0201015940126")
+        .center.phone_icon(style="width:100%")
+           img(src='/images/whitecall.svg' height='23px' width='23px' )
+  
+.tabContainer(style='position: relative;')
     .col-1
     .phone.listicon(style='cursor: pointer;')
-      img(src='/images/list.svg' height='30px' width='30px' style='margin-right: 10px;')
+      img(src='/images/list.svg' height='30px' width='30px' )
     .btn.tabs.windows.textshadow(style="padding-right: 0;")  ماركات السيارات
-    .btn.tabs.windows.textshadow &#x627;&#x644;&#x634;&#x631;&#x643;&#x627;&#x62A; &#x627;&#x644;&#x645;&#x635;&#x646;&#x639;&#x629;
-    .btn.tabs.windows.textshadow &#x627;&#x644;&#x62A;&#x635;&#x646;&#x64A;&#x641;&#x627;&#x62A;
-    .btn.tabs.textshadow.menu &#x645;&#x646;&#x62A;&#x62C;&#x627;&#x62A; arabdiag
+    .btn.tabs.windows.textshadow الشركات المصنعة
+    .btn.tabs.windows.textshadow التصنيفات
+    .btn.tabs.textshadow.menu منتجات arabdiag
     .btn.tabs.textshadow.menu software
-    .btn.tabs.textshadow.menu &#x627;&#x644;&#x643;&#x648;&#x631;&#x633;&#x627;&#x62A;
-//- div(style='height:30px')
+    .btn.tabs.textshadow.menu الكورسات
+    .center.hovderdiv-container(style="display:none")
+      .hovderdiv.shadow-lg
+        .hovderdiv-content
+          each i1 in Array(5).fill(Array(15).fill({"img":"/panners/buick-logo.png","link":"http://www.google.com"}))
+            .myrow
+              each i2 in i1
+                a(href=i2.link)
+                  .carBrands
+                    image(src=i2.img )
+        .hovderdiv-content
+          each i1 in Array(5).fill(Array(8).fill({"img":"/panners/alientech.png","link":"http://www.google.com"}))
+            .myrow
+              each i2 in i1
+                a(href=i2.link)
+                  .manufacturer
+                    image(src=i2.img)
+        .hovderdiv-content
+          each i1 in Array(5).fill(Array(9).fill({"img":"/panners/garage-remotes.png","text":"gate remote","link":"http://www.google.com"}))
+            .myrow
+              each i2 in i1
+                  .categories.mycolumn.main_spaceAround
+                    a(href=i2.link)
+                      image(src=i2.img)
+                      .center
+                        p(style="color:black") #{i2.text}
+        .hovderdiv-content
+          //- each i1 in [ Array(15),Array(15),Array(15),Array(15) ]
+          //-   .myrow
+          //-     each i2 in i1
+          //-       .carBrands
+            
+
+            //-  .hovderdiv.shadow-lg
+            //-     .grid.hovderdiv-content
+            //-       each i in Array(12)
+            //-         .carBrands
+            //-     .hovderdiv-content
+            //-       each i in ['1','2','3','4']
+            //-         div(style="background-color:green")
+                    
+            //-     .hovderdiv-content
+            //-       each i in ['1','2','3','4']
+            //-         div(style="background-color:blue")
+                    
+            //-     .hovderdiv-content
+            //-       each i in ['1','2','3','4']
+            //-         div(style="background-color:black")
+                    
+            //-     .hovderdiv-content
+            //-       each i in ['1','2','3','4']
+            //-         div(style="background-color:white")
+              
+              
+
+
+script(src='./javascripts/upperpage.js')

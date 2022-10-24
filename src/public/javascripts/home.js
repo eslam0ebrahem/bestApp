@@ -9,7 +9,7 @@ var product = document.getElementsByClassName("Hproduct")[0]
 handleUI()
 
 function handleUI() {
-    
+
     setHolderWidth()
     window.addEventListener('resize', (a) => {
         setHolderWidth()
@@ -95,7 +95,7 @@ function iteratorClick(iterator, direction) {
 }
 
 function transform(index, steps) {
-    
+
     var productsHolder = document.getElementsByClassName("slideshow")[index].querySelector(".productsHolder")
 
     var transform_index = mytransform[index]
@@ -107,7 +107,7 @@ function transform(index, steps) {
     if (transform_index + bigger_scroll < 0) transform_index = bigger_scroll * -1
 
     if (transform_index > 0) transform_index = 0
-    
+
     productsHolder.children[0].style.transform = `translate(${transform_index}px,0px)`
 
     mytransform[index] = transform_index
@@ -145,7 +145,7 @@ function refreshPoints(index) {
 
     }
     points.reverse()
-    
+
     document.getElementsByClassName("pointsContainer")[index].innerHTML = points.join("\n")
 }
 function getpointLocation(x, y) {
@@ -156,11 +156,44 @@ for (const iterator of document.getElementsByClassName("product")) {
 
     }
 }
+var start = 0
+var menow = -1
 
-/*
-each i in [1,2,3,4]
-          if i!=2
-            = i
-*/
+var movefromOut = false
 
-  
+var p = Array.of($("#slidebanner").children('a'))[0]
+
+var panners = [p[0], p[1], p[2]]
+
+console.log(typeof (panners))
+if (panners.length >= 0) {
+    setpanner(start++)
+    setInterval(function () {
+        if (movefromOut) {
+            movefromOut = false
+            return
+        }
+        setpanner(start++)
+    }, 5000);
+}
+$(".next").on("click", () => {
+    movefromOut = true
+    setpanner(start++)
+})
+$(".prev").on("click", () => {
+    movefromOut = true
+    setpanner(start--)
+})
+function setpanner(index) {
+    // console.log(index)
+    // index = Math.abs((index+panners.length) % panners.length)
+    // console.log(index)
+    if (menow >= 0) {
+        panners[menow].style.opacity = "0"
+        panners[menow].style.display = "none"
+    }
+    menow = index = (index + panners.length) % panners.length;
+    panners[index].style.opacity = "1"
+    panners[index].style.display = "flex"
+    return index
+}
