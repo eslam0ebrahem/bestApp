@@ -113,7 +113,9 @@ body {
 .tabs {
     display: initial;
     color: white;
-    margin-left: 20px;
+    margin: 4px;
+    margin-right: 0px;
+    font-size: small;
 }
 
 .hovderdiv-container {
@@ -301,9 +303,9 @@ body {
 
 #slidebanner {
     position: relative;
-    margin-right: 2px;
     opacity: 1;
     transition: 600ms;
+    margin: 10px 0px;
 }
 
 #slidebanner .slides {
